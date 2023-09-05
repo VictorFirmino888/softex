@@ -1,0 +1,18 @@
+var animais = [
+    ['chico', 'macaco', 5],
+    ['kiko', 'sapo', 1],
+    ['zé', 'cachorro', 2],
+]
+
+for (let i = 0; i < animais.length; i++){
+    const animal = animais[i];
+    const nomeDoAnimal = animal[0];
+    const especieDoAnimal = animal[1];
+    const idadeDoAnimal = animal[2];
+
+    console.log('Animal '+ (i+1) + ':');
+    console.log('nome: ' + nomeDoAnimal);
+    console.log('Espécie: ' + especieDoAnimal);
+    console.log('Idade: ' + idadeDoAnimal);
+    console.log('\n');
+}
