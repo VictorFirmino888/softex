@@ -1,0 +1,32 @@
+console.log('Excluindo dados de uma fila')
+console.log('\n')
+let fila = [3, 7, 9, 1, 0]
+
+function limparFila(array){
+  while (array.length > 0){
+    let itemRemovido = array.shift();
+    console.log(`O item ${itemRemovido} foi removido da fila`)
+  }
+}
+
+limparFila(fila);
+console.log('\n')
+
+console.log('Excluindo dados de uma lista')
+console.log('\n')
+let lista = [3, 7, 9, 1, 0]
+
+for (let i = lista.length - 1; i >= 0; i--){
+  let itemRemovido = lista.shift();
+  console.log(`O item ${itemRemovido} foi removido da lista`)
+}
+console.log('\n')
+
+console.log('Excluindo dados de uma pilha')
+console.log('\n')
+let pilha = [3, 7, 9, 1, 0]
+
+for (let i = pilha.length - 1; i >= 0; i--){
+  let itemRemovido = pilha.pop();
+  console.log(`O item ${itemRemovido} foi removido da pilha`)
+}  
