@@ -1,0 +1,40 @@
+const prompt = require('prompt-sync')();
+var listaNomes = [];
+var listaIdade = [];
+var listaCor = [];
+for (var n = 0; n < 10; n++){
+  var nome = prompt('informe o ' + (n+1) + 'º nome: ');
+  listaNomes.push(nome);
+}
+console.log("nomes inseridos: ");
+  console.log(listaNomes);
+
+for (var i =0; i < 10; i++){
+  var idade = prompt('informe a ' + (i+1) + 'º idade: ');
+  listaIdade.push(idade);
+}
+console.log("Idades inseridas: ");
+  console.log(listaIdade);
+
+for (var c = 0; c < 10; c++){
+  var cor = prompt('informe a ' + (c+1) + 'º cor preferida: ');
+  listaCor.push(cor);
+}  
+console.log('Cores preferidas inseridas na lista: ');
+  console.log(listaCor);
+  
+
+console.log(`Exibição das litas criadas: 
+ lista de nomes = ${listaNomes}
+ lista de idades = ${listaIdade}
+ lista de cores preferidas = ${listaCor}`)
+ 
+ listaCor.splice(2,1, 'roxo');
+ listaIdade.splice(0,1,33);
+ console.log(`Exibição das litas após as modificações: 
+ lista de nomes = ${listaNomes}
+ lista de idades = ${listaIdade}
+ lista de cores preferidas = ${listaCor}`)
+
+
+
