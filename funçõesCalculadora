@@ -1,0 +1,41 @@
+//função menu sem parametro
+function menu(){
+    console.log('Escolha uma operação: ');
+    console.log("1 - Adição (+)");
+    console.log("2 - Subtração (-)");
+    console.log("3 - Multiplicação (*)");
+    console.log("4 - Divisão (/)");
+}
+//função normal com parametro e return
+function calculadora(op,n1,n2) {
+    switch (op){
+        case '1':
+        case '+':    
+            return n1 + n2;
+        case '2':
+        case '-':    
+            return n1 - n2;
+        case '3':
+        case '*':
+            return n1 * n2;
+        case '4':
+        case '/':    
+            return n1 / n2;
+        default:
+            return 'Operação inexistente';
+    }
+}
+//função tipo arrow
+const calculo = (op,n1,n2) => {
+    const resultado = calculadora(op,n1,n2);
+    return `Resultado obtido ${resultado}`;
+}
+
+menu();
+const prompt = require('prompt-sync')();
+var operacao = (prompt("Digite o numero que representa a operação desejada: "));
+var numero1 = parseFloat(prompt("Digite o primeiro número: "));
+var numero2 = parseFloat(prompt("Digite o segundo número: "));
+
+const resultadoCalculo = calculo(operacao,numero1,numero2);
+console.log(resultadoCalculo);
