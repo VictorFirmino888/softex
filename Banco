@@ -1,0 +1,60 @@
+//criação da classe banco com as propriedades definidas
+class Banco{
+    constructor(conta,saldo,tpConta, agencia) {
+        this.conta = conta;
+        this.saldo = saldo;
+        this.tpConta = tpConta;
+        this.agencia = agencia;   
+}
+
+//criação dos metodos:
+//metodo para buscar saldo
+buscarSaldo(){
+    console.log(`O saldo da Conta ${this.conta}: R$: ${this.saldo}`);
+}
+
+//metodo para depositar
+depositar(valor){
+    if(valor > 0){
+    this.saldo += valor;
+    console.log(`Deposito de R$: ${valor} na conta ${this.conta} realizado com sucesso`);
+    this.buscarSaldo();
+}else{
+    console.log('Valor invalido para depositar');
+}
+}
+
+//metodo para sacar
+sacar(valor){
+    if(valor > 0 && valor <= this.saldo){
+        this.saldo -= valor;
+        console.log(`Saque de R$: ${valor} na conta ${this.conta} relizado com sucesso`);
+        this.buscarSaldo();
+    }else{
+        console.log('Saldo insuficiente ou valor inválido para saque');
+    }
+}
+
+//metodo para numero da conta
+numeroConta(){
+    return this.conta;
+}
+}
+
+//criando a conta
+let novaConta = new Banco(888,1000, "Poupança", 7888);
+let dataSaldo = new Date().toLocaleDateString();
+
+console.log(`Numero da Conta: ${novaConta.numeroConta()}`);
+console.log(`Tipo da Conta: ${novaConta.tpConta}`);
+console.log(`Agencia: ${novaConta.agencia}`);
+
+novaConta.buscarSaldo(); //verificar o saldo inicial
+
+novaConta.depositar(1000); //depositar 1000
+novaConta.sacar(250); //sacar 1000
+
+
+novaConta.buscarSaldo(); //verificar o saldo final
+
+console.log(`O saldo final da Conta ${novaConta.numeroConta()} em ${dataSaldo} = R$: ${novaConta.saldo}`); //console.log final
