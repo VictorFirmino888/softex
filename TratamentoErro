@@ -1,0 +1,17 @@
+const prompt = require('prompt-sync')();
+
+try {
+    let n1 = parseInt(prompt('Digite o primeiro numero '));
+    let n2 = parseInt(prompt('Digite o segundo numero '));
+    
+    if (isNaN(n1) || isNaN(n2)) {
+        throw new Error("Você não inseriu numeros validos, favor inserir numeros validos");
+}
+
+let resultado = n1 * n2;
+console.log("O primeiro numero multiplicado pelo segundo numero é:", resultado);
+} catch (error){
+    console.error('Ocorreu um erro: ' + error.message)
+} finally {
+    console.log('encerrar a execução')
+}
